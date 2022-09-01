@@ -24,17 +24,34 @@
 
     console.dir(root.style);
 
-    function soyoung(tagName,textContent){
-      return `<${tagName}>${textContent}</${tagName}>`
-    };
+  const dom = [];
+  // dom.push(`<div id ="test-1">아구몬</div>`)
+  // dom.push(`<div id ="test-2">디지몬</div>`)
+  // dom.push(`<div id ="test-3">포켓몬</div>`)
+  // dom.push(`<div id ="test-4">꼬부기</div>`)
+  // dom.push(`<div id ="test-5">라이츄</div>`)
 
-    let test = soyoung("section","hihihihihihi") +soyoung("article","--------")+ soyoung("nav","배고프다");
-    console.log(test)
+  // function makeTag (tagname,makeCount,attri,attriValue,textNode){
+  // for(let i = 0; i < makeCount; i++){
+  //   dom.push(`<${tagname} ${attri}="${attriValue}-${i+1}">${textNode}</${tagname}>`)
+  // }
+  // }
 
-    console.log(typeof(soyoung()))
+function makeTag (parentTag,tagName,makeCount,attri,attriValue,textNode){
+  dom.unshift(`<${parentTag}>`);
+  dom.push(`</${parentTag}>`);
+  for(let i = 0; i < makeCount; i++){
+    dom.splice(1,0,`<${tagName} ${attri}="${attriValue}-${i+1}">${textNode}</${tagName}>`)
+  }
+}
 
 
-    root.innerHTML = test;
+  // dom.unshift('<ul>');
+  // dom.push('</ul>');
+  console.log(dom.join(''))
+makeTag("ul","li",10,"id","test","꼬부기")
+
+  root.innerHTML = dom.join('');
   </script>
 </body>
 </html>
