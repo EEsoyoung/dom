@@ -39,10 +39,10 @@
 
 function makeTag (parentTag,tagName,makeCount,attri,attriValue,textNode){
   dom.unshift(`<${parentTag}>`);
-  dom.push(`</${parentTag}>`);
   for(let i = 0; i < makeCount; i++){
-    dom.splice(1,0,`<${tagName} ${attri}="${attriValue}-${i+1}">${textNode}</${tagName}>`)
+    dom.push(`<${tagName} ${attri}="${attriValue}-${i+1}">${textNode}</${tagName}>`)
   }
+  dom.push(`</${parentTag}>`);
 }
 
 
