@@ -1,0 +1,6 @@
+// innerHTML 
+body.innerHTML = '<div></div>'
+//  문자열을 태그로 문서에 넣을수있다. 
+join('') //배열을 하나의 문자열로 
+
+
