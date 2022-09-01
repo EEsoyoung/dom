@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="root"></div>
+  <script>
+    const root = document.getElementById('root');
+    //여러가지 배열메서드를 사용해서 "9월 1일" 부분을
+    // "9월 9일 추석연휴"로 편집한 후 문서에 출력하세요!
+    let example = `오늘은 9월 1일 입니다.`;
+
+    let arr = example.split(' ');
+    console.log(arr);
+    //1.spice '1일' 삭제 후 '9일 추석 연휴' 추가 (삭제한요소를 반환해준다)
+    // let change = arr.splice(2,1,'9일 추석 연휴');
+    // console.log(arr)
+    
+    
+
+    let changeExam = arr.includes('1일');
+    console.log(changeExam)
+
+    root.innerHTML = arr.join(' ');
+  </script>
+</body>
+</html>
