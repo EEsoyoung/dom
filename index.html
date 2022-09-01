@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    /* #root {
+      width: 100px;
+      height: 100px;
+      background-color: cadetblue;
+    } */
+  </style>
+</head>
+<body>
+  <div id="root"></div>
+  <script type="module">
+    const root = document.getElementById('root');
+    
+    root.style.width = '100px';
+    root.style.height = '100px';
+    root.style.backgroundColor = 'cadetblue';
+
+    console.dir(root.style);
+
+    function soyoung(tagName,textContent){
+      return `<${tagName}>${textContent}</${tagName}>`
+    };
+
+    let test = soyoung("section","hihihihihihi") +soyoung("article","--------")+ soyoung("nav","배고프다");
+    console.log(test)
+
+    console.log(typeof(soyoung()))
+
+
+    root.innerHTML = test;
+  </script>
+</body>
+</html>
